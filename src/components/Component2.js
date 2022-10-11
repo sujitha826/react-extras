@@ -1,5 +1,6 @@
 import React from 'react';
 import { animated, useSpring } from '@react-spring/web';
+import { Spring } from 'react-spring';
 
 function Component2() {
 

@@ -1,5 +1,6 @@
 import React from 'react';
-import { animated, useSpring } from '@react-spring/web';
+import { animated, useSpring } from 'react-spring';
+import { Spring } from 'react-spring';
 
 function Component1() {
     const styles = useSpring({
@@ -21,6 +22,11 @@ function Component1() {
                     It has survived not only five centuries, but also the leap into electronic typesetting,
                     remaining essentially unchanged. </p>
             </div>
+            <Spring from={{ number: 0 }} to={{ number: 10 }}>
+                {props => (<div style={props}>
+                    <h1 style={counter}>{props.number.toFixed()}</h1>
+                </div>)}
+            </Spring>
         </animated.div>
     );
 }
@@ -29,6 +35,14 @@ const c1Style = {
     background: 'steelblue',
     color: 'white',
     padding: '1.5rem'
+}
+
+const counter = {
+    background: "#333",
+    textAlign: 'center',
+    width: '100px',
+    borderRadius: '50%',
+    margin: '1rem auto'
 }
 
 export default Component1;
